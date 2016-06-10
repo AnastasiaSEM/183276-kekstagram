@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм» [![Build status][travis-image]][travis-url] [![Dependency status][dependency-image]][dependency-url]
 
 * Студент: [Anastasia Semmelroth](https://up.htmlacademy.ru/javascript/5/user/183276).
-* Наставник: `Неизвестно`.
+* Наставник: [Max Erekhinskiy](https://github.com/nightflash).
 
 ---
 
