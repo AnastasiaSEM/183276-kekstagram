@@ -1,3 +1,19 @@
+Skip to content
+This repository
+Search
+Pull requests
+Issues
+Gist
+ @AnastasiaSEM
+ Watch 3
+  Star 0
+  Fork 1 htmlacademy-javascript/72753-kekstagram
+ Code  Pull requests 1  Pulse  Graphs
+Branch: master Find file Copy path72753-kekstagram/build/js/resizer.js
+c952ac1  20 days ago
+@g1un g1un module2-task1 сделал обязательные задания
+2 contributors @g1un @keksobot
+RawBlameHistory     Executable File  340 lines (296 sloc)  13 KB
 'use strict';
 
 (function() {
@@ -119,6 +135,26 @@
           (-this._resizeConstraint.side / 2) - this._ctx.lineWidth / 2,
           this._resizeConstraint.side - this._ctx.lineWidth / 2,
           this._resizeConstraint.side - this._ctx.lineWidth / 2);
+
+      //Рисую темный слой вокруг желтой рамки
+      this._ctx.beginPath();
+      this._ctx.rect(-this._container.width, -this._container.height, 2 * this._container.width, 2 * this._container.height);
+      this._ctx.rect(
+        (-this._resizeConstraint.side / 2) - this._ctx.lineWidth,
+        (-this._resizeConstraint.side / 2) - this._ctx.lineWidth,
+        this._resizeConstraint.side + this._ctx.lineWidth / 2,
+        this._resizeConstraint.side + this._ctx.lineWidth / 2);
+      this._ctx.fillStyle = 'rgba(0,0,0,.8)';
+      this._ctx.fill('evenodd');
+
+      //Пишу размер рисунка над желтой рамкой
+      this._ctx.font = '15px Verdana';
+      this._ctx.fillStyle = '#fff';
+      this._ctx.textAlign = "center";
+      this._ctx.fillText(
+        this._image.naturalWidth + ' x ' + this._image.naturalHeight,
+        0,
+        (-this._resizeConstraint.side / 2) - this._ctx.lineWidth - 5);
 
       // Восстановление состояния канваса, которое было до вызова ctx.save
       // и последующего изменения системы координат. Нужно для того, чтобы
